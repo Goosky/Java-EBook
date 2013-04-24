@@ -1,0 +1,178 @@
+<!-- ?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+ -->
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="gb2312"></constant> 
+	<package name="default" extends="struts-default">
+	<default-action-ref name="Hello"/>
+	<action name="Hello">
+	<result>/nofound.jsp</result>
+	</action>
+	</package>
+	<package name="ebook" extends="struts-default">
+	<!-- 用户登录 -->
+		<action name="login" class="cn.ebook.login.LoginAction">		
+			<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="success">/ebook/ebookindex.jsp</result>
+			<result name="admin">/ebookadmin/admin.jsp</result>
+			<result name="null">/login/null.jsp</result>
+			<result name="error">/login/loginfailure.jsp</result>			
+		</action>
+		<!-- 主页到个人书架的切换，书架信息获取 -->
+		<action name="view" class="cn.ebook.getdata.ViewAction">		
+			<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="success">/ebook/ebookindex.jsp</result>
+			<result name="null">/login/nousernull.jsp</result>
+			<result name="nouser">/login/nousernull.jsp</result>			
+		</action>
+		<!-- 用户注册 -->
+				<action name="signup" class="cn.ebook.signup.SignUpAction">		
+			<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="success">/login/success.jsp</result>
+			<result name="null">/login/null.jsp</result>
+			<result name="error">/login/failure.jsp</result>			
+		</action>
+		<!-- 获取个人书架信息 -->
+		<action name="getdata" class="cn.ebook.getdata.GetDataAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+			<result name="success">/ebook/viewbooks.jsp</result>
+		</action>	
+		<!-- 书架管理 -->
+		<action name="management" class="cn.ebook.management.ManagementAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+			<result name="success">/ebook/management.jsp</result>
+		</action>	
+		<!-- 添加图书 -->
+		<action name="addbooks" class="cn.ebook.book.AddBooksAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/ebook/error.jsp</result>
+			<result name="success">/ebook/addok.jsp</result>
+			<result name="error">/ebook/addno.jsp</result>
+		</action>
+		<!-- 添加图书分类 -->
+		<action name="addclass" class="cn.ebook.book.AddBookClassAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/ebook/error.jsp</result>			
+			<result name="success">/ebook/addok.jsp</result>
+			<result name="error">/ebook/addno.jsp</result>
+		</action>
+		<!-- 获取图书分类，在添加图书时获取分类 -->
+		<action name="getclass" class="cn.ebook.book.GetBookClassAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/ebook/ebookgetclasserror.jsp</result>	
+		<result name="success">/ebook/addbooks.jsp</result>
+		<result name="error">/ebook/getclasserror.jsp</result>
+		</action>
+		<!-- 添加图书评论 -->
+			<action name="edit" class="cn.ebook.book.AddEditContentAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/ebook/error.jsp</result>			
+			<result name="success">/ebook/addcontentok.jsp</result>
+			<result name="error">/ebook/addcontentno.jsp</result>
+		</action>
+		<!-- 获取图书信息 ，写书评时获取图书信息-->
+		<action name="getbooks" class="cn.ebook.book.GetBooksAction">
+			<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebook/writeinfo.jsp</result>
+		<result name="error">/ebook/getbookserror.jsp</result>
+		</action>
+		<!-- 获取个人图书列表，删除图书时获取个人图书列表 -->
+		<action name="getpersonbooks" class="cn.ebook.book.GetPersonBooksAction">
+			<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebook/deletebookslist.jsp</result>
+		<result name="error">/ebook/getbookslisterror.jsp</result>
+		</action>
+		<!-- 删除图书action -->
+		<action name="deletebook" class="cn.ebook.book.DeleteBooksAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+			<result name="success">/ebook/deletebookok.jsp</result>
+			<result name="error">/ebook/deletebookerror.jsp</result>
+		</action>
+		<!-- 获取个人图书类别信息,删除图书类别时获取类别信息 -->
+		<action name="getpersonclass" class="cn.ebook.book.GetPersonBookClassAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+			<result name="success">/ebook/deleteclasslist.jsp</result>
+			<result name="error">/ebook/getclasslisterror.jsp</result>
+		</action>
+		<!-- 删除图书类别 -->
+		<action name="deletebookclass" class="cn.ebook.book.DeleteBookClassAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+			<result name="success">/ebook/deletebookok.jsp</result>
+			<result name="error">/ebook/deletebookerror.jsp</result>
+		</action>
+		<!-- 书架管理 -->
+		<!-- 删除用户 -->
+		<action name="deleteuser" class="cn.ebook.admin.Action.UserDeleteAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebookadmin/accountmanagement.jsp</result>
+		<result name="error">/ebookadmin/deleerror.jsp</result>
+		</action>
+		<!-- 设置用户 -->
+		<action name="setuser" class="cn.ebook.admin.Action.SetUserAdminAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebookadmin/accountmanagement.jsp</result>
+		<result name="error">/ebookadmin/seterror.jsp</result>
+		</action>
+		
+			<!-- 设置用户密码 -->
+		<action name="setuserpw" class="cn.ebook.admin.Action.SetUserPwAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebookadmin/chanagepwok.jsp</result>
+		<result name="error">/ebookadmin/changeerror.jsp</result>
+		</action>
+		<!-- 管理员添加用户 -->
+		<action name="adduser" class="cn.ebook.admin.Action.AdminAddUserAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebookadmin/accountmanagement.jsp</result>
+		<result name="error">/ebookadmin/seterror.jsp</result>
+		</action>
+		<!-- 删除图书 -->
+		<action name="bookdelete" class="cn.ebook.admin.Action.AdminDeleteBookAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebookadmin/bookmgmtbody.jsp</result>
+		<result name="error">/ebookadmin/delebookerror.jsp</result>
+		</action>
+		<!-- 删除评论 -->
+		<action name="discussiondelete" class="cn.ebook.admin.Action.AdminDeleteDiscussionAction">
+		<exception-mapping 
+			result="null" exception="java.lang.NullPointerException"/>
+			<result name="null">/login/null.jsp</result>
+		<result name="success">/ebookadmin/discussionmanagement.jsp</result>
+		<result name="error">/ebookadmin/delediscussionerror.jsp</result>
+		</action>
+	</package>
+</struts>    

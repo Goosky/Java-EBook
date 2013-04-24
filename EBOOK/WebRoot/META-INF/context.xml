@@ -1,0 +1,7 @@
+<Context reloadable="true">
+	<Resource name="jdbc/ebook" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/ebook"
+              username="root" password="zcqadmin" maxActive="200" maxIdle="30"
+              maxWait="-1"/>
+</Context>

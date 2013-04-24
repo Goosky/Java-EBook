@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="387,35" size="170,71">
+    <action name="Hello" location="10,20" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="nofound.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="ebook" location="392,136" size="170,513">
+    <action name="login" location="10,20" size="150,83">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="ebookindex.jsp" />
+      </result>
+      <result name="admin">
+        <resourceEdge source="admin" routing="0" target="admin.jsp" />
+      </result>
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="loginfailure.jsp" />
+      </result>
+    </action>
+    <action name="view" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="ebookindex.jsp" />
+      </result>
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="nousernull.jsp" />
+      </result>
+      <result name="nouser">
+        <resourceEdge source="nouser" routing="0" target="nousernull.jsp" />
+      </result>
+    </action>
+    <action name="signup" location="10,420" size="150,83">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="failure.jsp" />
+      </result>
+    </action>
+    <action name="getdata" location="10,120" size="150,62">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="viewbooks.jsp" />
+      </result>
+    </action>
+    <action name="management" location="10,320" size="150,62">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="management.jsp" />
+      </result>
+    </action>
+    <action name="addbooks" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="error.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addok.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="addno.jsp" />
+      </result>
+    </action>
+    <action name="addclass" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="error.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addok.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="addno.jsp" />
+      </result>
+    </action>
+    <action name="getclass" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="ebookgetclasserror.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addbooks.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="getclasserror.jsp" />
+      </result>
+    </action>
+    <action name="edit" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="error.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addcontentok.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="addcontentno.jsp" />
+      </result>
+    </action>
+    <action name="getbooks" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="writeinfo.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="getbookserror.jsp" />
+      </result>
+    </action>
+    <action name="getpersonbooks" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deletebookslist.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="getbookslisterror.jsp" />
+      </result>
+    </action>
+    <action name="deletebook" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deletebookok.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="deletebookerror.jsp" />
+      </result>
+    </action>
+    <action name="getpersonclass" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deleteclasslist.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="getclasslisterror.jsp" />
+      </result>
+    </action>
+    <action name="deletebookclass" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deletebookok.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="deletebookerror.jsp" />
+      </result>
+    </action>
+    <action name="deleteuser" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="accountmanagement.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="deleerror.jsp" />
+      </result>
+    </action>
+    <action name="setuser" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="accountmanagement.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="seterror.jsp" />
+      </result>
+    </action>
+    <action name="setuserpw" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="chanagepwok.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="changeerror.jsp" />
+      </result>
+    </action>
+    <action name="adduser" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="accountmanagement.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="seterror.jsp" />
+      </result>
+    </action>
+    <action name="bookdelete" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="bookmgmtbody.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="delebookerror.jsp" />
+      </result>
+    </action>
+    <action name="discussiondelete" location="0,0" size="0,0">
+      <result name="null">
+        <resourceEdge source="null" routing="0" target="null.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="discussionmanagement.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="delediscussionerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="loginfailure.jsp" path="/login/loginfailure.jsp" location="627,108" size="150,55" />
+  <webResource name="nofound.jsp" path="/nofound.jsp" location="157,38" size="150,55" />
+  <webResource name="ebookindex.jsp" path="/ebook/ebookindex.jsp" location="148,110" size="150,55" />
+  <webResource name="null.jsp" path="/login/null.jsp" location="945,68" size="150,55" />
+  <webResource name="viewbooks.jsp" path="/ebook/viewbooks.jsp" location="158,212" size="150,55" />
+  <webResource name="writeinfo.jsp" path="/ebook/writeinfo.jsp" location="160,330" size="150,55" />
+  <webResource name="management.jsp" path="/ebook/management.jsp" location="171,449" size="150,55" />
+  <webResource name="success.jsp" path="/login/success.jsp" location="148,553" size="150,55" />
+  <webResource name="failure.jsp" path="/login/failure.jsp" location="153,642" size="150,55" />
+  <webResource name="nousernull.jsp" path="/login/nousernull.jsp" location="974,196" size="0,0" />
+  <webResource name="error.jsp" path="/ebook/error.jsp" location="0,0" size="0,0" />
+  <webResource name="addok.jsp" path="/ebook/addok.jsp" location="842,346" size="0,0" />
+  <webResource name="addno.jsp" path="/ebook/addno.jsp" location="0,0" size="0,0" />
+  <webResource name="addclassok.jsp" path="/ebook/addclassok.jsp" location="994,508" size="0,0" />
+  <webResource name="addclassno.jsp" path="/ebook/addclassno.jsp" location="0,0" size="0,0" />
+  <webResource name="ebookgetclasserror.jsp" path="/ebook/ebookgetclasserror.jsp" location="332,744" size="0,0" />
+  <webResource name="addbooks.jsp" path="/ebook/addbooks.jsp" location="0,0" size="0,0" />
+  <webResource name="getclasserror.jsp" path="/ebook/getclasserror.jsp" location="1074,604" size="0,0" />
+  <webResource name="addcontentok.jsp" path="/ebook/addcontentok.jsp" location="0,0" size="0,0" />
+  <webResource name="addcontentno.jsp" path="/ebook/addcontentno.jsp" location="338,888" size="0,0" />
+  <webResource name="getbookserror.jsp" path="/ebook/getbookserror.jsp" location="924,974" size="0,0" />
+  <webResource name="deletebookslist.jsp" path="/ebook/deletebookslist.jsp" location="0,0" size="0,0" />
+  <webResource name="getbookslisterror.jsp" path="/ebook/getbookslisterror.jsp" location="0,0" size="0,0" />
+  <webResource name="deletebookok.jsp" path="/ebook/deletebookok.jsp" location="888,1104" size="0,0" />
+  <webResource name="deletebookerror.jsp" path="/ebook/deletebookerror.jsp" location="0,0" size="0,0" />
+  <webResource name="deleteclasslist.jsp" path="/ebook/deleteclasslist.jsp" location="0,0" size="0,0" />
+  <webResource name="getclasslisterror.jsp" path="/ebook/getclasslisterror.jsp" location="778,1246" size="0,0" />
+  <webResource name="admin.jsp" path="/ebookadmin/admin.jsp" location="0,0" size="0,0" />
+  <webResource name="viewshelf.jsp" path="/ebookadmin/viewshelf.jsp" location="0,0" size="0,0" />
+  <webResource name="deleerror.jsp" path="/ebookadmin/deleerror.jsp" location="834,1394" size="0,0" />
+  <webResource name="accountmanagement.jsp" path="/ebookadmin/accountmanagement.jsp" location="16,1538" size="0,0" />
+  <webResource name="seterror.jsp" path="/ebookadmin/seterror.jsp" location="0,0" size="0,0" />
+  <webResource name="chanagepwok.jsp" path="/ebookadmin/chanagepwok.jsp" location="0,0" size="0,0" />
+  <webResource name="changeerror.jsp" path="/ebookadmin/changeerror.jsp" location="0,0" size="0,0" />
+  <webResource name="bookmgmtbody.jsp" path="/ebookadmin/bookmgmtbody.jsp" location="0,0" size="0,0" />
+  <webResource name="delebookerror.jsp" path="/ebookadmin/delebookerror.jsp" location="0,0" size="0,0" />
+  <webResource name="discussionmanagement.jsp" path="/ebookadmin/discussionmanagement.jsp" location="16,1882" size="0,0" />
+  <webResource name="delediscussionerror.jsp" path="/ebookadmin/delediscussionerror.jsp" location="0,0" size="0,0" />
+  <webResource name="loginsuccess.jsp" path="/login/loginsuccess.jsp" location="614,22" size="150,55" />
+</Struts2Diagram>
+
